@@ -36,7 +36,11 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
+<<<<<<< HEAD
         return redirect()->route('home');
+=======
+        return redirect()->route('login');
+>>>>>>> 1622a053f9b411143f0e9dc2b4d036faa3f05adb
     }
     public function showRegistrationForm()
 {
@@ -48,6 +52,7 @@ public function register(Request $request)
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users,email',
+<<<<<<< HEAD
         'password' => 'required|min:8',
     ]);
 
@@ -56,6 +61,19 @@ public function register(Request $request)
     $user = User::create($validatedData);
 
    
+=======
+        'password' => 'required|min:8|confirmed', // Use 'confirmed' se você tiver um campo 'password_confirmation'
+    ]);
+
+    $validatedData['password'] = bcrypt($validatedData['password']);
+    $validatedData['remember_token'] = null; // Este campo pode ser deixado como null, pois será gerenciado pelo Laravel
+    $validatedData['email_verified_at'] = null; // Defina como null inicialmente
+
+    $user = User::create($validatedData);
+
+    // Se você estiver usando verificação de e-mail, pode enviar um e-mail de verificação aqui
+
+>>>>>>> 1622a053f9b411143f0e9dc2b4d036faa3f05adb
     return redirect()->route('login')->with('success', 'Cadastro realizado com sucesso! Você pode fazer login.');
 }
 

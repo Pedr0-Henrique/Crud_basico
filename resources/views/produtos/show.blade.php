@@ -15,8 +15,8 @@
     <div class="container mt-5">
         <h1 class="mb-4">Ver Produto</h1>
 
-        <form action="" method="POST">
             @csrf
+            <form action="method= "GET" action="{{ route('produtos.ver', $produto->id) }}" method="POST">
 
             <div class="form-group">
                 <label for="nome">Nome</label>
@@ -38,7 +38,7 @@
                 <input type="text" name="quantidade" class="form-control" value="{{ $produto->quantidade }}" readonly>
             </div>
 
-            <button type="submit" class="btn btn-primary">Salvar</button>
+      
 
             @if(session('success'))
             <div class="alert alert-success mt-3">
