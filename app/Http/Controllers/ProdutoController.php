@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Produto;
+use App\Models\User;
 
 
 use Illuminate\Http\Request;
@@ -11,8 +12,8 @@ class ProdutoController extends Controller
 
     public function index()
     {
-        $produtos = Produto::all(); // Obtém todos os produtos do banco de dados
-        return view('produtos.index', compact('produtos')); // Passa os produtos para a view
+        $produtos = Produto::all();
+        return view('produtos.index', compact('produtos')); 
     }
     
 
