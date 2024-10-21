@@ -8,7 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .hero {
-            background: #001d3d no-repeat center center;
+            background: #00072d no-repeat center center;
             background-size: cover;
             color: white;
             height: 600px;

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\AuthController;
 
 
 
@@ -43,7 +44,7 @@ Route::get('/produtos/delete/{id}', [ProdutoController::class, 'delete'])->name(
 Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])->name('produtos.destroy');
 
 // Rotas para login
-use App\Http\Controllers\AuthController;
+
 
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
@@ -51,13 +52,8 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-use App\Http\Controllers\AuthController;
 
-
-
-
-
-
+// Rotas para login
 
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
@@ -82,4 +78,3 @@ Route::get('/usuarios/editar/{id}', [UsuarioController::class, 'edit'])->name('u
 Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
 Route::get('/usuarios/delete/{id}', [UsuarioController::class, 'delete'])->name('usuarios.delete');
 Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
-

@@ -42,15 +42,10 @@
     <div class="container mt-5">
         <h1 class="mb-4">Lista de Produtos</h1>
 
-        <!-- Botão de Logout -->
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
-<<<<<<< HEAD
+
        
-=======
-        <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger mb-3">Sair</button>
->>>>>>> 1622a053f9b411143f0e9dc2b4d036faa3f05adb
+
+
 
         <a href="{{ route('produtos.create') }}" class="btn btn-primary mb-3">Adicionar Novo Produto</a>
 
